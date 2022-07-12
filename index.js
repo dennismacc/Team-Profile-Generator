@@ -1,8 +1,9 @@
-const src = require('src');
+const src = require('fs');
+
 const createEmployee = require('./src/createEmployee');
 
-function initialize() {
+function init() {
     createEmployee.createManager();
-};
+}
 
-initialize();
+init();

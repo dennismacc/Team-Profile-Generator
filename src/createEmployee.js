@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 const questions = require("./questions");
-const generate = require("./generateMarkdown");
+const startHTML = require("./template");
 
 const Manager = require("../lib/Manager");
 const Engineer = require("../lib/Engineer");
@@ -47,7 +47,7 @@ function createIntern() {
   });
 }
 
-function addMore() {
+function addNew() {
   inquirer.prompt(questions.addMoreEmployees).then((answers) => {
     switch (answers.addMore) {
       case "Manager":
@@ -68,9 +68,9 @@ function addMore() {
   });
 }
 
-module.exports = {
+module.exports = { 
     createManager,
     createEngineer,
     createIntern,
-    addMore,
+    addNew,
 };
