@@ -50,13 +50,13 @@ function createIntern() {
 function addNew() {
   inquirer.prompt(questions.addMoreEmployees).then((answers) => {
     switch (answers.addMore) {
-      case "Manager":
+      case "Add another Manager":
         createManager();
         break;
-      case "Engineer":
+      case "Add Engineer":
         createEngineer();
         break;
-      case "Intern":
+      case "Add Intern":
         createIntern();
         break;
       case "Exit":
