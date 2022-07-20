@@ -16,6 +16,8 @@ A Node.js command-line application that takes in information about employees on 
 This application uses the Inquirer NPM package to ask the user a series of questions via the command terminal and takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person. Within the HTML webpage, users can click on the email address to access the employees email as well as click on a GitHub username to open the GitHub profile in a new tab.
 
 ## Preview 📸
+https://user-images.githubusercontent.com/100378792/179900367-ff988630-cc17-4fe3-b719-215b09b60056.mov
+
 
 
 ## Installation 📥
@@ -24,10 +26,7 @@ This application uses the Inquirer NPM package to ask the user a series of quest
 
 
 ## Usage 🖥
-This
-1. Run the application by opening the terminal and typing node index.js
-2. The application will ask you a series of questions and generate a team profile based on the information you provide.
-3. The application will then generate an HTML webpage that displays summaries for each person.
+This application will generate a quick webpage that displays the basic information for a team of employees and provides quick access to their emails and GitHubs profiles. 
 
 
 ## License ⚙️
