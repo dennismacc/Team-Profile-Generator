@@ -71,7 +71,7 @@ const addMoreEmployees = {
     type: 'list',
     name: 'addMore',
     message: 'Would you like to add more employees?',
-    choices: ['Add another Manager', 'Add Engineer', 'Add Intern', 'Exit']
+    choices: ['Add Engineer', 'Add Intern', 'Exit']
 }
 
 module.exports = {

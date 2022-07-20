@@ -1,10 +1,13 @@
 const inquirer = require("inquirer");
 const questions = require("./questions");
-const startHTML = require("./template");
+const fs = require("fs");
+// const startHTML = require("./template");
 
+const Employee = require("../lib/Employee");
 const Manager = require("../lib/Manager");
 const Engineer = require("../lib/Engineer");
 const Intern = require("../lib/Intern");
+const team = require("../src/template");
 
 const allEmployees = [];
 
@@ -40,7 +43,7 @@ function createIntern() {
       answers.internName,
       answers.internId,
       answers.internEmail,
-      answers.internNumber
+      answers.school
     );
     allEmployees.push(intern);
     addNew();
@@ -50,9 +53,6 @@ function createIntern() {
 function addNew() {
   inquirer.prompt(questions.addMoreEmployees).then((answers) => {
     switch (answers.addMore) {
-      case "Add another Manager":
-        createManager();
-        break;
       case "Add Engineer":
         createEngineer();
         break;
@@ -60,17 +60,19 @@ function addNew() {
         createIntern();
         break;
       case "Exit":
-        startHTML.startHTML(allEmployees);
-        break;
-      default:
-        console.log(`${allEmployees} are present`);
+        exit();
     }
   });
 }
 
-module.exports = { 
-    createManager,
-    createEngineer,
-    createIntern,
-    addNew,
+function exit() {
+  fs.writeFileSync("./dist/index.html", team(allEmployees));
+}
+
+module.exports = {
+  createManager,
+  createEngineer,
+  createIntern,
+  addNew,
+  exit,
 };
